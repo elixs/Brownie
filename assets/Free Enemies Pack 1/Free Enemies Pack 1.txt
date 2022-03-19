@@ -1,0 +1,22 @@
+1.Asimole 1
+2.Barrel 1
+3.Bat 1
+4.Creeps 1
+5.Defencer 1
+6.Dragonfly 1
+7.Element Crystal 1
+8.Fairy 1
+9.Frog 1
+10.Frog 2
+11.Genie 1
+12.Hobgob 1
+13.Lantern 1
+14.Slime 1
+15.Spore 1
+16.Training Dummy 1
+17.Treant 1
+18.Two Faced 1
+19.Vampire Tulip 1
+20.Zero 1
+
+Each pack contains a full animated battler sheet, a single image for database and a turn order small cut image. These can be used as Enemies or Actors.
