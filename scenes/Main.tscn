@@ -6,7 +6,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="BillyJackson" parent="." instance=ExtResource( 1 )]
-position = Vector2( 325, 99 )
+position = Vector2( 170, 24 )
 
 [node name="Block" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 288 )

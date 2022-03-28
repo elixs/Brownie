@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/FirstTimeWriting_Font_1_00/FirstTimeWriting!.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 259.0
+margin_top = 116.0
+margin_right = 380.0
+margin_bottom = 243.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 114.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_right = 107.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "Brownie"
+
+[node name="Play" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 41.0
+margin_right = 107.0
+margin_bottom = 75.0
+text = "Play"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 79.0
+margin_right = 107.0
+margin_bottom = 113.0
+text = "Exit"

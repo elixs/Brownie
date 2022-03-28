@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/FirstTimeWriting_Font_1_00/FirstTimeWriting!.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 1 )
+Button/fonts/font = null
+MarginContainer/constants/margin_bottom = 32
+MarginContainer/constants/margin_left = 32
+MarginContainer/constants/margin_right = 32
+MarginContainer/constants/margin_top = 32

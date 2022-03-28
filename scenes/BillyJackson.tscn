@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/Cowboy (Animated Pixel Art)/CowBoyIdle.png" type="Texture" id=1]
 [ext_resource path="res://assets/Cowboy (Animated Pixel Art)/CowBoyWalking.png" type="Texture" id=2]
@@ -14,7 +14,7 @@ height = 50.0
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ 7 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,7 +50,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:flip_v")
+tracks/3/path = NodePath("Pivot/Sprite:flip_v")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -67,7 +67,7 @@ resource_name = "fall"
 length = 0.9
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -79,7 +79,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -91,7 +91,7 @@ tracks/1/keys = {
 "values": [ 9 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -103,7 +103,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:flip_v")
+tracks/3/path = NodePath("Pivot/Sprite:flip_v")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -115,12 +115,78 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=28]
+resource_name = "fire"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fire"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:firing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
 length = 0.7
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -132,7 +198,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -144,7 +210,7 @@ tracks/1/keys = {
 "values": [ 7 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -161,7 +227,7 @@ resource_name = "jump"
 length = 0.9
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -173,7 +239,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -185,7 +251,7 @@ tracks/1/keys = {
 "values": [ 9 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -201,7 +267,7 @@ tracks/2/keys = {
 resource_name = "jump_start"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -213,7 +279,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -225,7 +291,7 @@ tracks/1/keys = {
 "values": [ 6 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -241,7 +307,7 @@ tracks/2/keys = {
 resource_name = "land"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -253,7 +319,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -265,7 +331,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -277,7 +343,7 @@ tracks/2/keys = {
 "values": [ 3 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:flip_v")
+tracks/3/path = NodePath("Pivot/Sprite:flip_v")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -294,7 +360,7 @@ resource_name = "walk"
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Pivot/Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -306,7 +372,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/path = NodePath("Pivot/Sprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -318,7 +384,7 @@ tracks/1/keys = {
 "values": [ 8 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:frame")
+tracks/2/path = NodePath("Pivot/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -332,6 +398,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationNodeAnimation" id=15]
 animation = "fall"
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "fire"
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "idle"
@@ -373,9 +442,21 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=9]
 states/fall/node = SubResource( 15 )
 states/fall/position = Vector2( 432.531, 170.2 )
+states/fire/node = SubResource( 29 )
+states/fire/position = Vector2( -57, 111 )
 states/idle/node = SubResource( 5 )
 states/idle/position = Vector2( 177.47, 4.43999 )
 states/jump/node = SubResource( 16 )
@@ -386,16 +467,22 @@ states/land/node = SubResource( 18 )
 states/land/position = Vector2( 431.942, 256.6 )
 states/walk/node = SubResource( 6 )
 states/walk/position = Vector2( 176.888, 256.312 )
-transitions = [ "idle", "walk", SubResource( 7 ), "walk", "idle", SubResource( 8 ), "idle", "jump_start", SubResource( 19 ), "walk", "jump_start", SubResource( 20 ), "jump_start", "jump", SubResource( 21 ), "jump", "fall", SubResource( 22 ), "fall", "land", SubResource( 23 ), "land", "walk", SubResource( 24 ), "land", "idle", SubResource( 25 ), "idle", "fall", SubResource( 26 ), "walk", "fall", SubResource( 27 ) ]
+transitions = [ "idle", "walk", SubResource( 7 ), "walk", "idle", SubResource( 8 ), "idle", "jump_start", SubResource( 19 ), "walk", "jump_start", SubResource( 20 ), "jump_start", "jump", SubResource( 21 ), "jump", "fall", SubResource( 22 ), "fall", "land", SubResource( 23 ), "land", "walk", SubResource( 24 ), "land", "idle", SubResource( 25 ), "idle", "fall", SubResource( 26 ), "walk", "fall", SubResource( 27 ), "idle", "fire", SubResource( 30 ), "walk", "fire", SubResource( 31 ), "fire", "idle", SubResource( 32 ), "fire", "walk", SubResource( 33 ) ]
 start_node = "idle"
-graph_offset = Vector2( -187, -48 )
+graph_offset = Vector2( -514, -110 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=10]
 
 [node name="BillyJackson" type="KinematicBody2D"]
 script = ExtResource( 3 )
+firing = true
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="BulletSpawn" type="Position2D" parent="Pivot"]
+position = Vector2( 26, -2 )
+
+[node name="Sprite" type="Sprite" parent="Pivot"]
 position = Vector2( 0, -5 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
@@ -408,6 +495,7 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/fall = SubResource( 14 )
+anims/fire = SubResource( 28 )
 anims/idle = SubResource( 3 )
 anims/jump = SubResource( 11 )
 anims/jump_start = SubResource( 12 )
