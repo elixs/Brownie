@@ -41,7 +41,7 @@ func _physics_process(delta):
 	
 	var has_fired = false
 	
-	if Input.is_action_just_pressed("fire"):
+	if is_on_floor() and Input.is_action_just_pressed("fire"):
 		playback.travel("fire")
 		has_fired = true
 	

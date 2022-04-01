@@ -8,7 +8,9 @@ func _ready():
 
 
 func _on_body_entered(body: Node):
-	print("meh")
+	queue_free()
+	if body.has_method("take_damage"):
+		body.take_damage(self)
 
 
 func _physics_process(delta):
