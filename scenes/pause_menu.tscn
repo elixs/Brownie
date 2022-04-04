@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/FirstTimeWriting_Font_1_00/FirstTimeWriting!.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/pause_menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="PauseMenu" type="MarginContainer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 250.0
+margin_top = 107.0
+margin_right = 390.0
+margin_bottom = 252.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 133.0
+margin_bottom = 138.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_right = 126.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 1 )
+text = "Pause"
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 59.0
+margin_right = 126.0
+margin_bottom = 93.0
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 97.0
+margin_right = 126.0
+margin_bottom = 131.0
+text = "Main Menu"

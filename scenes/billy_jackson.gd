@@ -8,7 +8,7 @@ var velocity = Vector2()
 
 export var firing = false
 
-var Bullet = preload("res://scenes/Bullet.tscn")
+var Bullet = preload("res://scenes/bullet.tscn")
 
 onready var sprite = $Sprite
 onready var anim_player = $AnimationPlayer
@@ -16,10 +16,14 @@ onready var anim_tree = $AnimationTree
 onready var playback = anim_tree.get("parameters/playback")
 onready var bullet_spawn = $Pivot/BulletSpawn
 onready var pivot = $Pivot
+onready var camera = $Camera2D
 
 func _ready():
 	anim_tree.active = true
 	firing = false
+	Manager.meh = 3
+	Manager.player = self
+	# camera.set_as_toplevel(true)
 
 
 func _physics_process(delta):
@@ -64,6 +68,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left") and not Input.is_action_just_pressed("move_right"):
 		pivot.scale.x = -1
 
+	# follow camera optional
+	# camera.global_position = lerp(camera.global_position, global_position, 0.1)
 
 func fire():
 	var bullet = Bullet.instance()

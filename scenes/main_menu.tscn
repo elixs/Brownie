@@ -2,7 +2,7 @@
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/FirstTimeWriting_Font_1_00/FirstTimeWriting!.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://scenes/main_menu.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
