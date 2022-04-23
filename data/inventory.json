@@ -1,0 +1,24 @@
+{
+  "0": {
+    "item": "book",
+    "quantity": 10
+  },
+  "5": {
+    "item": "bottle",
+    "quantity": 2
+  }
+  ,
+  "7": {
+    "item": "battery",
+    "quantity": 1
+  }
+  ,
+  "11": {
+    "item": "bottle",
+    "quantity": 1
+  },
+  "17": {
+    "item": "book",
+    "quantity": 30
+  }
+}
