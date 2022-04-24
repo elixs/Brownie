@@ -1,16 +1,26 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var sprite = $Sprite
+onready var label = $Label
+
+var id
+var icon: Texture setget set_icon
+var quantity: int = 99 setget set_quantity
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready() -> void:
+	self.quantity = quantity
+	self.icon = icon
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func set_quantity(value: int):
+	quantity = value
+	if label:
+		label.text = str(quantity)
+
+
+func set_icon(value: Texture):
+	icon = value
+	if sprite:
+		sprite.texture = icon

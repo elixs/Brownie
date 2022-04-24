@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Manager="*res://scripts/manager.gd"
+InventoryManager="*res://scripts/inventory_manager.gd"
 
 [display]
 

@@ -1,20 +1,17 @@
 {
   "book": {
     "name": "Book",
-    "pickable": true,
-    "stack": 32,
+    "stack_size": 32,
     "icon": "book.png"
   },
   "battery": {
     "name": "Battery",
-    "pickable": "false",
-    "stack": 1,
+    "stack_size": 1,
     "icon": "battery.png"
   },
   "bottle": {
     "name": "Bottle",
-    "pickable": "true",
-    "stack": 3,
+    "stack_size": 3,
     "icon": "bottle.png"
   }
 }

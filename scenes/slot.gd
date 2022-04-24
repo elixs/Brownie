@@ -3,45 +3,38 @@ class_name Slot
 
 extends TextureRect
 
-onready var quantity_label = $QuantityLabel
+signal selected
 
 export(Texture) var empty_texture
 export(Texture) var full_texture
-
-var Item = preload("res://scenes/item.tscn")
-
-
 export var empty = true setget set_empty
 
-var _item setget _set_item
-var _quantiy setget set_quantity
+var item: Node2D = null setget set_item
+
+onready var holder = $Holder
+
 
 func _ready():
 	connect("gui_input", self, "_on_gui_input")
-	quantity_label.visible = false
+
 
 func set_empty(value):
 	empty = value
 	texture = empty_texture if empty else full_texture
 
+
 func _on_gui_input(event: InputEvent):
-	print(event)
+	if event.is_action_pressed("select") and not event.is_echo():
+		emit_signal("selected")
 
-func set_item(item, quantity):
-	self._item = item
-	self._quantiy = quantity
 
-func set_quantity(value):
-	_quantiy = value
-	if _quantiy > 1:
-		quantity_label.visible = true
-		quantity_label.text = str(_quantiy)
+func set_item(value):
+	item = value
+	if item:
+		if item.get_parent():
+			item.get_parent().remove_child(item)
+		holder.add_child(item)
+		item.position = Vector2.ZERO
+		self.empty = false
 	else:
-		quantity_label.visible = false
-
-
-func _set_item(value):
-	_item = value
-	var i = Item.instance()
-	i.texture = load("res://assets/sf_items/%s" % _item.icon)
-	add_child(i)
+		self.empty = true
