@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://persistent/stats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hp = 355
+defense = 2
+luck = 42.42
+name = "28jkvnlad"

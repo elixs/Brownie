@@ -273,6 +273,7 @@ position = Vector2( 283, 157 )
 position = Vector2( -88, 145 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 70, -175 )
 
 [node name="DeathPlane" parent="." instance=ExtResource( 7 )]
 position = Vector2( 656, 602 )
